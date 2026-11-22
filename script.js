@@ -1,58 +1,80 @@
 
+"use strict";
+
 document.addEventListener("DOMContentLoaded", () => {
+  // AÑO AUTOMÁTICO
+  const year = document.getElementById("year");
 
-  // MENÚ PARA MÓVILES
-  const menuButton = document.querySelector(".menu-toggle");
-  const nav = document.querySelector(".main-nav");
+  if (year) {
+    year.textContent = new Date().getFullYear();
+  }
 
-  if (menuButton && nav) {
-    menuButton.addEventListener("click", () => {
-      const open = nav.classList.toggle("open");
+  // MENÚ MÓVIL
+  const menuToggle = document.querySelector(".menu-toggle");
+  const mainNav = document.querySelector(".main-nav");
 
-      menuButton.setAttribute("aria-expanded", String(open));
-      menuButton.setAttribute(
+  if (menuToggle && mainNav) {
+    const closeMenu = () => {
+      mainNav.classList.remove("open");
+      menuToggle.classList.remove("active");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "Abrir menú");
+    };
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = mainNav.classList.toggle("open");
+
+      menuToggle.classList.toggle("active", isOpen);
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute(
         "aria-label",
-        open ? "Cerrar menú" : "Abrir menú"
+        isOpen ? "Cerrar menú" : "Abrir menú"
       );
     });
 
-    nav.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        nav.classList.remove("open");
-        menuButton.setAttribute("aria-expanded", "false");
-      });
+    mainNav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("click", (event) => {
+      if (
+        !mainNav.contains(event.target) &&
+        !menuToggle.contains(event.target)
+      ) {
+        closeMenu();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeMenu();
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 700) {
+        closeMenu();
+      }
     });
   }
 
-  // COMPARADOR ANTES Y DESPUÉS
-  const slider = document.getElementById("comparison-slider");
-  const after = document.getElementById("comparison-after");
-  const handle = document.getElementById("comparison-handle");
+  // ANIMACIONES AL DESPLAZARSE
+  const revealElements = document.querySelectorAll(".reveal");
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
 
-  function updateComparison() {
-    if (!slider || !after || !handle) return;
-
-    const value = slider.value + "%";
-
-    after.style.width = value;
-    handle.style.left = value;
-  }
-
-  if (slider) {
-    slider.addEventListener("input", updateComparison);
-    updateComparison();
-  }
-
-  // ANIMACIONES AL BAJAR POR LA PÁGINA
-  const revealItems = document.querySelectorAll(".reveal");
-
-  if ("IntersectionObserver" in window) {
-    const observer = new IntersectionObserver(
-      (entries, obs) => {
-        entries.forEach(entry => {
+  if (reduceMotion || !("IntersectionObserver" in window)) {
+    revealElements.forEach((element) => {
+      element.classList.add("visible");
+    });
+  } else {
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("visible");
-            obs.unobserve(entry.target);
+            observer.unobserve(entry.target);
           }
         });
       },
@@ -62,40 +84,55 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     );
 
-    revealItems.forEach(item => observer.observe(item));
-
-  } else {
-    revealItems.forEach(item => {
-      item.classList.add("visible");
+    revealElements.forEach((element) => {
+      revealObserver.observe(element);
     });
   }
 
-  // BARRA DE PROGRESO SUPERIOR
-  const progress = document.getElementById("scroll-progress");
+  // BARRA DE PROGRESO
+  const progressBar = document.getElementById("scroll-progress");
 
   const updateProgress = () => {
-    if (!progress) return;
+    if (!progressBar) return;
 
-    const scrollable =
+    const totalHeight =
       document.documentElement.scrollHeight - window.innerHeight;
 
-    progress.style.width =
-      (scrollable > 0
-        ? window.scrollY / scrollable * 100
-        : 0) + "%";
+    const progress = totalHeight > 0
+      ? (window.scrollY / totalHeight) * 100
+      : 0;
+
+    progressBar.style.width = `${Math.min(100, Math.max(0, progress))}%`;
   };
 
-  window.addEventListener("scroll", updateProgress, {
-    passive: true
-  });
-
+  window.addEventListener("scroll", updateProgress, { passive: true });
+  window.addEventListener("resize", updateProgress);
   updateProgress();
 
-  // AÑO AUTOMÁTICO DEL FOOTER
-  const year = document.getElementById("year");
+  // COMPARADOR ANTES / DESPUÉS
+  const slider = document.getElementById("comparison-slider");
+  const afterLayer = document.getElementById("comparison-after");
+  const handle = document.getElementById("comparison-handle");
 
-  if (year) {
-    year.textContent = new Date().getFullYear();
+  const updateComparison = () => {
+    if (!slider || !afterLayer || !handle) return;
+
+    const value = Math.min(100, Math.max(0, Number(slider.value)));
+
+    afterLayer.style.clipPath = `inset(0 ${100 - value}% 0 0)`;
+    handle.style.left = `${value}%`;
+  };
+
+  if (slider && afterLayer && handle) {
+    slider.addEventListener("input", updateComparison);
+    slider.addEventListener("change", updateComparison);
+    updateComparison();
   }
 
+  // CERRAR EL MENÚ SI SE CAMBIA A ORDENADOR
+  // Y ACTUALIZAR LA BARRA AL VOLVER A LA PÁGINA
+  window.addEventListener("pageshow", () => {
+    updateProgress();
+    updateComparison();
+  });
 });
