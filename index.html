@@ -3,11 +3,9 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#080b16">
-  <meta name="description" content="Webloria Studio: diseño de páginas web modernas, profesionales y adaptadas a móviles para pequeños negocios.">
-  <meta name="robots" content="index, follow">
-
+  <meta name="description" content="Webloria Studio crea páginas web modernas, profesionales y adaptadas a móviles para pequeños negocios.">
   <title>Webloria Studio | Tu idea, en la web</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,519 +15,242 @@
   <link rel="stylesheet" href="styles.css">
   <script src="js/script.js" defer></script>
 </head>
-
 <body>
 
   <div class="scroll-progress" id="scroll-progress"></div>
   <div class="ambient ambient-one"></div>
   <div class="ambient ambient-two"></div>
 
-  <!-- CABECERA -->
   <header class="site-header" id="top">
-
     <a class="brand" href="#inicio" aria-label="Webloria Studio, inicio">
       <span class="brand-mark">W<span>.</span></span>
       <span>webloria<span class="brand-light">.studio</span></span>
     </a>
 
-    <button class="menu-toggle"
-      type="button"
-      aria-label="Abrir menú"
-      aria-expanded="false">
-      <span></span>
-      <span></span>
+    <button class="menu-toggle" type="button"
+      aria-label="Abrir menú" aria-expanded="false"
+      aria-controls="main-nav">
+      <span></span><span></span>
     </button>
 
-    <nav class="main-nav" aria-label="Navegación principal">
+    <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
       <a href="#servicios">Servicios</a>
       <a href="#portfolio">Proyectos</a>
+      <a href="#antes-despues">Antes / Después</a>
       <a href="#planes">Precios</a>
       <a href="#proceso">Proceso</a>
       <a class="nav-cta" href="#contacto">Hablemos <span>↗</span></a>
     </nav>
-
   </header>
 
   <main>
-
-    <!-- INICIO -->
+    <!-- HERO -->
     <section class="hero section-wrap" id="inicio">
-
       <div class="hero-copy reveal">
-
-        <div class="eyebrow">
-          <span class="status-dot"></span>
-          ESTUDIO DE DISEÑO WEB
-        </div>
-
-        <h1>
-          Tu negocio merece<br>
-          una web <span class="gradient-text">inolvidable.</span>
-        </h1>
-
+        <div class="eyebrow"><span class="status-dot"></span> ESTUDIO DE DISEÑO WEB</div>
+        <h1>Tu negocio merece<br>una web <span class="gradient-text">inolvidable.</span></h1>
         <p class="hero-lead">
           Diseñamos páginas web modernas que transmiten confianza,
-          muestran lo mejor de tu negocio y convierten visitas
-          en oportunidades.
+          muestran lo mejor de tu negocio y ayudan a tus clientes
+          a dar el siguiente paso.
         </p>
 
         <div class="hero-actions">
-
-          <a class="button button-primary" href="#portfolio">
-            Ver nuestros diseños <span>↘</span>
-          </a>
-
-          <a class="button button-quiet"
-            href="https://ig.me/m/webloria.studio"
-            target="_blank"
-            rel="noopener noreferrer">
-            Hablemos por Instagram <span>↗</span>
-          </a>
-
+          <a class="button button-primary" href="#portfolio">Ver diseños <span>↘</span></a>
+          <a class="button button-quiet" href="https://ig.me/m/webloria.studio"
+             target="_blank" rel="noopener noreferrer">Hablar por Instagram <span>↗</span></a>
         </div>
 
         <div class="hero-proof">
-
-          <div class="proof-avatars">
-            <i>W</i>
-            <i>✦</i>
-            <i>↗</i>
-          </div>
-
-          <span>
-            Diseño cuidado. Experiencia sencilla.
-            <b>En todos los dispositivos.</b>
-          </span>
-
+          <div class="proof-avatars"><i>W</i><i>✦</i><i>↗</i></div>
+          <span>Diseño cuidado. Experiencia sencilla.<b> En todos los dispositivos.</b></span>
         </div>
-
       </div>
 
-      <div class="hero-art">
-
+      <div class="hero-art reveal">
         <div class="orbit orbit-a"></div>
         <div class="orbit orbit-b"></div>
-
-        <div class="floating-tag tag-top">
-          ✦ Diseño a medida
-        </div>
+        <div class="floating-tag tag-top">✦ Diseño a medida</div>
 
         <div class="browser-card">
-
           <div class="browser-bar">
-            <div class="browser-dots">
-              <i></i>
-              <i></i>
-              <i></i>
-            </div>
-
-            <span>tu-negocio.com</span>
-            <b>↗</b>
+            <div class="browser-dots"><i></i><i></i><i></i></div>
+            <span>tu-negocio.com</span><b>↗</b>
           </div>
-
           <div class="browser-content">
-
-            <div class="mini-nav">
-              <strong>STUDIO<span>.</span></strong>
-              <small>INICIO　 SERVICIOS　 CONTACTO</small>
-            </div>
-
+            <div class="mini-nav"><strong>STUDIO<span>.</span></strong><small>INICIO　 SERVICIOS　 CONTACTO</small></div>
             <div class="mini-hero">
-
               <div>
                 <small>HECHO PARA DESTACAR</small>
-
-                <h3>
-                  Una gran idea<br>
-                  merece una gran<br>
-                  <em>presencia.</em>
-                </h3>
-
-                <button type="button">Descubrir más ↗</button>
+                <h3>Una gran idea<br>merece una gran<br><em>presencia.</em></h3>
+                <span class="mini-button">Descubrir más ↗</span>
               </div>
-
-              <div class="mini-art">
-                <div class="mini-sun"></div>
-                <div class="mini-plant">✳</div>
-              </div>
-
+              <div class="mini-art"><div class="mini-sun"></div><div class="mini-plant">✳</div></div>
             </div>
-
-            <div class="mini-bottom">
-              <span>01 / DISEÑO</span>
-              <span>02 / EXPERIENCIA</span>
-              <span>03 / RESULTADOS</span>
-            </div>
-
+            <div class="mini-bottom"><span>01 / DISEÑO</span><span>02 / EXPERIENCIA</span><span>03 / RESULTADOS</span></div>
           </div>
         </div>
 
-        <div class="floating-tag tag-bottom">
-          <span>●</span> Adaptada a móvil
-        </div>
-
+        <div class="floating-tag tag-bottom"><span>●</span> Adaptada a móvil</div>
         <div class="hero-spark">✳</div>
-
       </div>
-
     </section>
 
-    <!-- TEXTO ANIMADO -->
+    <!-- CINTA -->
     <section class="ticker" aria-label="Especialidades">
       <div class="ticker-track">
-        <span>DISEÑO WEB</span><b>✳</b>
-        <span>IDENTIDAD DIGITAL</span><b>✳</b>
-        <span>DISEÑO RESPONSIVE</span><b>✳</b>
-        <span>EXPERIENCIAS DIGITALES</span><b>✳</b>
-        <span>DISEÑO WEB</span><b>✳</b>
-        <span>IDENTIDAD DIGITAL</span><b>✳</b>
+        <span>DISEÑO WEB</span><b>✳</b><span>IDENTIDAD DIGITAL</span><b>✳</b>
+        <span>DISEÑO RESPONSIVE</span><b>✳</b><span>EXPERIENCIAS DIGITALES</span><b>✳</b>
+        <span>DISEÑO WEB</span><b>✳</b><span>IDENTIDAD DIGITAL</span><b>✳</b>
       </div>
     </section>
 
     <!-- SERVICIOS -->
     <section class="section-wrap section-block" id="servicios">
-
       <div class="section-heading reveal">
-
         <div>
           <div class="eyebrow">LO QUE HACEMOS</div>
-
-          <h2>
-            Una web que trabaja<br>
-            <span class="gradient-text">a favor de tu negocio.</span>
-          </h2>
+          <h2>Una web que trabaja<br><span class="gradient-text">a favor de tu negocio.</span></h2>
         </div>
-
-        <p>
-          Tu página web es muchas veces la primera impresión.
-          Hagamos que esté a la altura de lo que ofreces.
-        </p>
-
+        <p>Tu página web es muchas veces la primera impresión. Hagamos que esté a la altura de lo que ofreces.</p>
       </div>
 
       <div class="service-grid">
-
         <article class="service-card reveal">
-          <div class="service-icon">⌘</div>
-          <span class="card-index">01 / DISEÑO</span>
+          <div class="service-icon">⌘</div><span class="card-index">01 / DISEÑO</span>
           <h3>Diseño moderno</h3>
-          <p>
-            Una estética profesional, clara y alineada
-            con la personalidad de tu marca.
-          </p>
+          <p>Una estética profesional, clara y alineada con la personalidad de tu marca.</p>
           <a href="#contacto">Quiero mi web <span>↗</span></a>
         </article>
-
         <article class="service-card reveal">
-          <div class="service-icon">▣</div>
-          <span class="card-index">02 / EXPERIENCIA</span>
+          <div class="service-icon">▣</div><span class="card-index">02 / EXPERIENCIA</span>
           <h3>Adaptada a móviles</h3>
-          <p>
-            Una experiencia cómoda y atractiva en móvil,
-            tablet y ordenador.
-          </p>
+          <p>Una experiencia cómoda y atractiva en móvil, tablet y ordenador.</p>
           <a href="#contacto">Quiero mi web <span>↗</span></a>
         </article>
-
         <article class="service-card reveal">
-          <div class="service-icon">↗</div>
-          <span class="card-index">03 / CONTACTO</span>
+          <div class="service-icon">↗</div><span class="card-index">03 / CONTACTO</span>
           <h3>Más fácil contactar</h3>
-          <p>
-            Botones y secciones pensados para que tus clientes
-            sepan cómo dar el siguiente paso.
-          </p>
+          <p>Botones y secciones pensados para facilitar el contacto con tus clientes.</p>
           <a href="#contacto">Quiero mi web <span>↗</span></a>
         </article>
-
       </div>
-
     </section>
 
-    <!-- PROYECTOS -->
+    <!-- PLANTILLAS -->
     <section class="section-wrap section-block portfolio-section" id="portfolio">
-
       <div class="section-heading reveal">
-
         <div>
           <div class="eyebrow">IDEAS QUE COBRAN VIDA</div>
-          <h2>
-            Diseños para <span class="gradient-text">imaginar.</span>
-          </h2>
+          <h2>Diseños para <span class="gradient-text">imaginar.</span></h2>
         </div>
-
-        <p>
-          Ejemplos conceptuales de cómo podría verse la web
-          de distintos tipos de negocio.
-        </p>
-
+        <p>Ejemplos conceptuales de cómo podría verse la web de distintos tipos de negocio.</p>
       </div>
 
       <div class="portfolio-grid">
-
         <article class="project-card project-large reveal">
-
           <div class="project-preview cafe-preview">
-
-            <div class="mock-nav">
-              <b>CAFÉ NÓRDICO</b>
-              <span>MENÚ　 HISTORIA　 CONTACTO</span>
-            </div>
-
+            <div class="mock-nav"><b>CAFÉ NÓRDICO</b><span>MENÚ　 HISTORIA　 CONTACTO</span></div>
             <div class="cafe-layout">
               <small>CAFÉ · PANADERÍA · MOMENTOS</small>
               <h3>Un buen día<br>empieza <i>aquí.</i></h3>
               <span class="mock-button">DESCUBRE NUESTRA CARTA ↗</span>
             </div>
-
             <div class="coffee-cup">◉</div>
-
           </div>
-
-          <div class="project-meta">
-            <div>
-              <span>01 / HOSTELERÍA</span>
-              <h3>Cafetería de especialidad</h3>
-            </div>
-            <b>↗</b>
-          </div>
-
+          <div class="project-meta"><div><span>01 / HOSTELERÍA</span><h3>Cafetería de especialidad</h3></div><b>↗</b></div>
         </article>
 
         <article class="project-card reveal">
-
           <div class="project-preview fitness-preview">
-
-            <div class="fit-top">
-              FORM / CLUB <span>MENU +</span>
-            </div>
-
-            <div class="fit-copy">
-              <small>ENTRENA A TU MANERA</small>
-              <h3>MAKE<br><i>IT</i><br>HAPPEN.</h3>
-              <span>EMPIEZA HOY ↗</span>
-            </div>
-
+            <div class="fit-top">FORM / CLUB <span>MENU +</span></div>
+            <div class="fit-copy"><small>ENTRENA A TU MANERA</small><h3>MAKE<br><i>IT</i><br>HAPPEN.</h3><span>EMPIEZA HOY ↗</span></div>
             <div class="fit-circle"></div>
-
           </div>
-
-          <div class="project-meta">
-            <div>
-              <span>02 / DEPORTE</span>
-              <h3>Estudio fitness</h3>
-            </div>
-            <b>↗</b>
-          </div>
-
+          <div class="project-meta"><div><span>02 / DEPORTE</span><h3>Estudio fitness</h3></div><b>↗</b></div>
         </article>
 
         <article class="project-card reveal">
-
           <div class="project-preview beauty-preview">
-
-            <div class="beauty-top">
-              ATELIER <span>EST. 2024</span>
-            </div>
-
-            <div class="beauty-center">
-              <small>ESPACIO DE BELLEZA</small>
-              <h3>Tu esencia,<br><i>tu momento.</i></h3>
-              <span>RESERVA TU CITA</span>
-            </div>
-
+            <div class="beauty-top">ATELIER <span>EST. 2024</span></div>
+            <div class="beauty-center"><small>ESPACIO DE BELLEZA</small><h3>Tu esencia,<br><i>tu momento.</i></h3><span>RESERVA TU CITA</span></div>
             <div class="beauty-flower">✿</div>
-
           </div>
-
-          <div class="project-meta">
-            <div>
-              <span>03 / BELLEZA</span>
-              <h3>Beauty atelier</h3>
-            </div>
-            <b>↗</b>
-          </div>
-
+          <div class="project-meta"><div><span>03 / BELLEZA</span><h3>Beauty atelier</h3></div><b>↗</b></div>
         </article>
-
       </div>
-
-      <p class="portfolio-note">
-        * Estos diseños son muestras conceptuales, no webs de clientes reales.
-      </p>
-
+      <p class="portfolio-note">* Estos diseños son muestras conceptuales, no webs de clientes reales.</p>
     </section>
 
     <!-- ANTES Y DESPUÉS -->
-    <section class="before-after-section">
-
+    <section class="before-after-section" id="antes-despues">
       <div class="section-wrap section-block">
-
         <div class="section-heading reveal">
-
           <div>
             <div class="eyebrow">EL CAMBIO SE NOTA</div>
-            <h2>
-              Del antes al <span class="gradient-text">después.</span>
-            </h2>
+            <h2>Del antes al <span class="gradient-text">después.</span></h2>
           </div>
-
-          <p>
-            Arrastra el control para comparar una página básica
-            con una propuesta visual renovada.
-          </p>
-
+          <p>Arrastra el control para comparar una página básica con una propuesta visual renovada.</p>
         </div>
 
         <div class="comparison-wrap reveal">
+          <div class="comparison-label label-before">ANTES <span>Diseño básico</span></div>
+          <div class="comparison-label label-after">DESPUÉS <span>Diseño renovado</span></div>
 
-          <div class="comparison-label label-before">
-            ANTES <span>Diseño básico</span>
-          </div>
-
-          <div class="comparison-label label-after">
-            DESPUÉS <span>Diseño renovado</span>
-          </div>
-
-          <div class="comparison-stage">
-
+          <div class="comparison-stage" id="comparison-stage">
             <div class="comparison-before">
-
               <div class="old-site">
-
                 <div class="old-top">MI NEGOCIO</div>
-
                 <div class="old-hero">
                   <h3>Bienvenidos a<br>nuestra página</h3>
-                  <p>
-                    Ofrecemos servicios de calidad
-                    para todos nuestros clientes.
-                  </p>
-                  <button type="button">Más información</button>
+                  <p>Ofrecemos servicios de calidad para todos nuestros clientes.</p>
+                  <span>Más información</span>
                 </div>
-
-                <div class="old-columns">
-                  <i></i><i></i><i></i>
-                </div>
-
-                <div class="old-footer">
-                  INICIO　 SERVICIOS　 CONTACTO
-                </div>
-
+                <div class="old-columns"><i></i><i></i><i></i></div>
+                <div class="old-footer">INICIO　 SERVICIOS　 CONTACTO</div>
               </div>
-
             </div>
 
             <div class="comparison-after" id="comparison-after">
-
               <div class="new-site">
-
-                <div class="new-top">
-                  <b>FORMA<span>.</span></b>
-                  <small>INICIO　 SERVICIOS　 SOBRE NOSOTROS</small>
-                  <button type="button">CONTACTAR ↗</button>
-                </div>
-
+                <div class="new-top"><b>FORMA<span>.</span></b><small>INICIO　 SERVICIOS　 SOBRE NOSOTROS</small><span>CONTACTAR ↗</span></div>
                 <div class="new-hero">
-
                   <div>
                     <small>DISEÑADO PARA TI</small>
-
-                    <h3>
-                      Tu mejor<br>
-                      versión <i>empieza</i><br>
-                      aquí.
-                    </h3>
-
-                    <p>
-                      Una experiencia pensada para destacar
-                      y conectar con tus clientes.
-                    </p>
-
+                    <h3>Tu mejor<br>versión <i>empieza</i><br>aquí.</h3>
+                    <p>Una experiencia pensada para destacar y conectar con tus clientes.</p>
                     <b>DESCUBRIR MÁS　↗</b>
                   </div>
-
-                  <div class="new-orb">
-                    <span>✳</span>
-                  </div>
-
+                  <div class="new-orb"><span>✳</span></div>
                 </div>
-
-                <div class="new-bottom">
-                  <span>01 / CALIDAD</span>
-                  <span>02 / CONFIANZA</span>
-                  <span>03 / RESULTADOS</span>
-                </div>
-
+                <div class="new-bottom"><span>01 / CALIDAD</span><span>02 / CONFIANZA</span><span>03 / RESULTADOS</span></div>
               </div>
-
             </div>
 
-            <div class="comparison-handle" id="comparison-handle">
-              <span>↔</span>
-            </div>
-
-            <input
-              type="range"
-              min="0"
-              max="100"
-              value="50"
-              id="comparison-slider"
-              aria-label="Desliza para comparar antes y después">
-
+            <div class="comparison-handle" id="comparison-handle"><span>↔</span></div>
+            <input type="range" min="0" max="100" value="50" id="comparison-slider" aria-label="Desliza para comparar antes y después">
           </div>
-
-          <div class="comparison-hint">
-            ← DESLIZA PARA COMPARAR →
-          </div>
-
+          <div class="comparison-hint">← DESLIZA PARA COMPARAR →</div>
         </div>
-
       </div>
-
     </section>
 
     <!-- PLANES -->
     <section class="section-wrap section-block" id="planes">
-
       <div class="section-heading reveal">
-
         <div>
           <div class="eyebrow">PRECIOS CLAROS</div>
-          <h2>
-            Elige el impulso<br>
-            <span class="gradient-text">que necesitas.</span>
-          </h2>
+          <h2>Elige el impulso<br><span class="gradient-text">que necesitas.</span></h2>
         </div>
-
-        <p>
-          Planes de partida para proyectos sencillos.
-          Cuéntanos tu idea y concretaremos el alcance antes de empezar.
-        </p>
-
+        <p>Planes de partida para proyectos sencillos. Cuéntanos tu idea y concretaremos el alcance antes de empezar.</p>
       </div>
 
       <div class="pricing-grid">
-
-        <!-- MINI -->
         <article class="price-card reveal">
-
-          <div class="plan-top">
-            <span>01 / PARA EMPEZAR</span>
-            <span class="plan-symbol">✳</span>
-          </div>
-
+          <div class="plan-top"><span>01 / PARA EMPEZAR</span><span class="plan-symbol">✳</span></div>
           <h3>MINI</h3>
-
-          <p class="plan-desc">
-            Tu presencia online, sencilla y profesional.
-          </p>
-
-          <div class="price">
-            <strong>35€</strong>
-            <span>/ desde</span>
-          </div>
-
+          <p class="plan-desc">Tu presencia online, sencilla y profesional.</p>
+          <div class="price"><strong>35€</strong><span>/ desde</span></div>
           <ul>
             <li>Web de una sola página</li>
             <li>Diseño adaptable a móviles</li>
@@ -537,37 +258,15 @@
             <li>Botón de contacto</li>
             <li>1 ronda de cambios</li>
           </ul>
-
-          <a class="button button-outline plan-link"
-            href="https://ig.me/m/webloria.studio?text=Hola%20Webloria%20Studio%2C%20me%20interesa%20el%20plan%20MINI%20de%2035%E2%82%AC.%20Quiero%20informaci%C3%B3n."
-            target="_blank"
-            rel="noopener noreferrer">
-            Elegir MINI <span>↗</span>
-          </a>
-
+          <a class="button button-outline" href="https://ig.me/m/webloria.studio?text=Hola%20Webloria%20Studio%2C%20me%20interesa%20el%20plan%20MINI%20de%2035%E2%82%AC." target="_blank" rel="noopener noreferrer">Elegir MINI <span>↗</span></a>
         </article>
 
-        <!-- BUSINESS -->
         <article class="price-card price-featured reveal">
-
           <div class="popular-tag">MÁS ELEGIDO</div>
-
-          <div class="plan-top">
-            <span>02 / PARA CRECER</span>
-            <span class="plan-symbol">✦</span>
-          </div>
-
+          <div class="plan-top"><span>02 / PARA CRECER</span><span class="plan-symbol">✦</span></div>
           <h3>BUSINESS</h3>
-
-          <p class="plan-desc">
-            Más espacio para mostrar todo lo que ofreces.
-          </p>
-
-          <div class="price">
-            <strong>55€</strong>
-            <span>/ desde</span>
-          </div>
-
+          <p class="plan-desc">Más espacio para mostrar todo lo que ofreces.</p>
+          <div class="price"><strong>55€</strong><span>/ desde</span></div>
           <ul>
             <li>Hasta 4 secciones</li>
             <li>Diseño personalizado</li>
@@ -575,35 +274,14 @@
             <li>Botón de contacto</li>
             <li>2 rondas de cambios</li>
           </ul>
-
-          <a class="button button-primary plan-link"
-            href="https://ig.me/m/webloria.studio?text=Hola%20Webloria%20Studio%2C%20me%20interesa%20el%20plan%20BUSINESS%20de%2055%E2%82%AC.%20Quiero%20informaci%C3%B3n."
-            target="_blank"
-            rel="noopener noreferrer">
-            Elegir BUSINESS <span>↗</span>
-          </a>
-
+          <a class="button button-primary" href="https://ig.me/m/webloria.studio?text=Hola%20Webloria%20Studio%2C%20me%20interesa%20el%20plan%20BUSINESS%20de%2055%E2%82%AC." target="_blank" rel="noopener noreferrer">Elegir BUSINESS <span>↗</span></a>
         </article>
 
-        <!-- PREMIUM -->
         <article class="price-card reveal">
-
-          <div class="plan-top">
-            <span>03 / PARA DESTACAR</span>
-            <span class="plan-symbol">⌘</span>
-          </div>
-
+          <div class="plan-top"><span>03 / PARA DESTACAR</span><span class="plan-symbol">⌘</span></div>
           <h3>PREMIUM</h3>
-
-          <p class="plan-desc">
-            Una presentación más completa para tu marca.
-          </p>
-
-          <div class="price">
-            <strong>85€</strong>
-            <span>/ desde</span>
-          </div>
-
+          <p class="plan-desc">Una presentación más completa para tu marca.</p>
+          <div class="price"><strong>85€</strong><span>/ desde</span></div>
           <ul>
             <li>Hasta 6 secciones</li>
             <li>Servicios y galería</li>
@@ -611,313 +289,125 @@
             <li>Enlaces a redes sociales</li>
             <li>3 rondas de cambios</li>
           </ul>
-
-          <a class="button button-outline plan-link"
-            href="https://ig.me/m/webloria.studio?text=Hola%20Webloria%20Studio%2C%20me%20interesa%20el%20plan%20PREMIUM%20de%2085%E2%82%AC.%20Quiero%20informaci%C3%B3n."
-            target="_blank"
-            rel="noopener noreferrer">
-            Elegir PREMIUM <span>↗</span>
-          </a>
-
+          <a class="button button-outline" href="https://ig.me/m/webloria.studio?text=Hola%20Webloria%20Studio%2C%20me%20interesa%20el%20plan%20PREMIUM%20de%2085%E2%82%AC." target="_blank" rel="noopener noreferrer">Elegir PREMIUM <span>↗</span></a>
         </article>
-
       </div>
 
       <p class="pricing-footnote">
-        Precios orientativos para proyectos sencillos. Dominio, alojamiento
-        de pago, mantenimiento, herramientas externas y funciones especiales
-        no incluidos. El precio y el alcance finales se acuerdan antes de comenzar.
+        Precios orientativos para proyectos sencillos. Dominio, alojamiento de pago,
+        mantenimiento, herramientas externas y funciones especiales no incluidos.
+        El precio y el alcance finales se acuerdan antes de comenzar.
       </p>
-
     </section>
 
     <!-- PROCESO -->
     <section class="section-wrap section-block process-section" id="proceso">
-
       <div class="section-heading reveal">
-
-        <div>
-          <div class="eyebrow">ASÍ DE FÁCIL</div>
-          <h2>
-            De tu idea a <span class="gradient-text">tu nueva web.</span>
-          </h2>
-        </div>
-
-        <p>
-          Un proceso claro, cercano y organizado para que sepas
-          qué ocurre en cada etapa.
-        </p>
-
+        <div><div class="eyebrow">ASÍ DE FÁCIL</div><h2>De tu idea a <span class="gradient-text">tu nueva web.</span></h2></div>
+        <p>Un proceso claro, cercano y organizado para que sepas qué ocurre en cada etapa.</p>
       </div>
 
       <div class="process-grid">
-
-        <article class="process-step reveal">
-          <span>01</span>
-          <h3>Nos cuentas</h3>
-          <p>
-            Nos explicas tu negocio, qué necesitas
-            y qué estilo te gusta.
-          </p>
-        </article>
-
-        <article class="process-step reveal">
-          <span>02</span>
-          <h3>Diseñamos</h3>
-          <p>
-            Preparamos una propuesta visual
-            adaptada a tu marca.
-          </p>
-        </article>
-
-        <article class="process-step reveal">
-          <span>03</span>
-          <h3>Revisamos</h3>
-          <p>
-            Revisamos los detalles y aplicamos
-            los cambios incluidos.
-          </p>
-        </article>
-
-        <article class="process-step reveal">
-          <span>04</span>
-          <h3>Publicamos</h3>
-          <p>
-            Con tu aprobación, dejamos la web
-            lista para compartir.
-          </p>
-        </article>
-
+        <article class="process-step reveal"><span>01</span><h3>Nos cuentas</h3><p>Nos explicas tu negocio, qué necesitas y qué estilo te gusta.</p></article>
+        <article class="process-step reveal"><span>02</span><h3>Diseñamos</h3><p>Preparamos una propuesta visual adaptada a tu marca.</p></article>
+        <article class="process-step reveal"><span>03</span><h3>Revisamos</h3><p>Revisamos los detalles y aplicamos los cambios incluidos.</p></article>
+        <article class="process-step reveal"><span>04</span><h3>Publicamos</h3><p>Con tu aprobación, dejamos la web lista para compartir.</p></article>
       </div>
-
     </section>
 
-    <!-- PREGUNTAS FRECUENTES -->
+    <!-- FAQ -->
     <section class="section-wrap section-block faq-section">
-
       <div class="section-heading reveal">
-
-        <div>
-          <div class="eyebrow">PREGUNTAS FRECUENTES</div>
-          <h2>
-            ¿Tienes alguna <span class="gradient-text">duda?</span>
-          </h2>
-        </div>
-
+        <div><div class="eyebrow">PREGUNTAS FRECUENTES</div><h2>¿Tienes alguna <span class="gradient-text">duda?</span></h2></div>
       </div>
 
       <div class="faq-list reveal">
-
         <details>
           <summary>¿Los precios incluyen dominio y alojamiento?</summary>
-          <p>
-            No. Los precios indicados son para el diseño y desarrollo
-            descrito. Un dominio propio, alojamiento de pago o servicios
-            externos se presupuestan aparte si hacen falta.
-          </p>
+          <p>No. Los precios indicados son para el diseño y desarrollo descrito. Un dominio propio, alojamiento de pago o servicios externos se presupuestan aparte si hacen falta.</p>
         </details>
-
         <details>
           <summary>¿La web se verá bien en móviles?</summary>
-          <p>
-            Sí. Los diseños se preparan para adaptarse a móviles,
-            tablets y ordenadores.
-          </p>
+          <p>Sí. Los diseños se preparan para adaptarse a móviles, tablets y ordenadores.</p>
         </details>
-
         <details>
           <summary>¿Puedo pedir cambios?</summary>
-          <p>
-            Cada plan incluye las rondas de cambios indicadas.
-            Cualquier trabajo adicional se hablará y presupuestará antes.
-          </p>
+          <p>Cada plan incluye las rondas de cambios indicadas. Cualquier trabajo adicional se hablará y presupuestará antes.</p>
         </details>
-
         <details>
           <summary>¿Cómo empiezo?</summary>
-          <p>
-            Puedes elegir un plan y escribirnos por Instagram,
-            o enviarnos una solicitud desde el formulario de esta página.
-          </p>
+          <p>Puedes elegir un plan y escribirnos por Instagram, o enviarnos una solicitud desde el formulario de esta página.</p>
         </details>
-
       </div>
-
     </section>
 
-    <!-- CONTACTO Y FORMULARIO -->
+    <!-- CONTACTO -->
     <section class="contact-section" id="contacto">
-
       <div class="section-wrap contact-inner">
-
         <div class="contact-copy reveal">
-
           <div class="eyebrow">TU SIGUIENTE PASO</div>
-
-          <h2>
-            ¿Hacemos algo<br>
-            <span class="gradient-text">increíble?</span>
-          </h2>
-
-          <p>
-            Cuéntanos un poco sobre tu negocio y qué tienes en mente.
-            Te responderemos para hablar de tu proyecto.
-          </p>
-
-          <a class="contact-instagram"
-            href="https://ig.me/m/webloria.studio"
-            target="_blank"
-            rel="noopener noreferrer">
-            O escríbenos por Instagram <span>↗</span>
-          </a>
-
-          <a class="contact-email"
-            href="mailto:webloriastudio@gmail.com">
-            webloriastudio@gmail.com
-          </a>
-
+          <h2>¿Hacemos algo<br><span class="gradient-text">increíble?</span></h2>
+          <p>Cuéntanos un poco sobre tu negocio y qué tienes en mente. Te responderemos para hablar de tu proyecto.</p>
+          <a class="contact-instagram" href="https://ig.me/m/webloria.studio" target="_blank" rel="noopener noreferrer">O escríbenos por Instagram <span>↗</span></a>
+          <a class="contact-email" href="mailto:webloriastudio@gmail.com">webloriastudio@gmail.com</a>
         </div>
 
-        <!-- FORMULARIO DE ENVÍO DE CORREOS -->
-        <form
-          class="contact-form reveal"
+        <form class="contact-form reveal"
           action="https://formsubmit.co/webloriastudio@gmail.com"
           method="POST">
 
-          <!-- CONFIGURACIÓN DEL CORREO -->
-          <input
-            type="hidden"
-            name="_subject"
-            value="Nueva solicitud de proyecto - Webloria Studio">
+          <input type="hidden" name="_subject" value="Nueva solicitud de proyecto - Webloria Studio">
+          <input type="hidden" name="_template" value="table">
+          <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
 
-          <input
-            type="hidden"
-            name="_template"
-            value="table">
+          <div class="form-heading"><span>CUÉNTANOS TU IDEA</span><b>↗</b></div>
 
-          <!-- CAMPO ANTI-SPAM -->
-          <input
-            type="text"
-            name="_honey"
-            style="display:none"
-            tabindex="-1"
-            autocomplete="off">
-
-          <div class="form-heading">
-            <span>CUÉNTANOS TU IDEA</span>
-            <b>↗</b>
-          </div>
-
-          <label for="contact-name">
-            Tu nombre
-            <input
-              id="contact-name"
-              type="text"
-              name="name"
-              placeholder="¿Cómo te llamas?"
-              autocomplete="name"
-              maxlength="100"
-              required>
+          <label for="contact-name">Tu nombre
+            <input id="contact-name" type="text" name="name" placeholder="¿Cómo te llamas?" autocomplete="name" maxlength="100" required>
           </label>
 
-          <label for="contact-email">
-            Tu email
-            <input
-              id="contact-email"
-              type="email"
-              name="email"
-              placeholder="tunombre@email.com"
-              autocomplete="email"
-              maxlength="150"
-              required>
+          <label for="contact-email">Tu email
+            <input id="contact-email" type="email" name="email" placeholder="tunombre@email.com" autocomplete="email" maxlength="150" required>
           </label>
 
-          <label for="contact-business">
-            Nombre de tu negocio <small>(opcional)</small>
-            <input
-              id="contact-business"
-              type="text"
-              name="business"
-              placeholder="Nombre del negocio"
-              maxlength="150">
+          <label for="contact-business">Nombre de tu negocio <small>(opcional)</small>
+            <input id="contact-business" type="text" name="business" placeholder="Nombre del negocio" maxlength="150">
           </label>
 
-          <label for="contact-plan">
-            ¿Qué plan te interesa?
-
+          <label for="contact-plan">¿Qué plan te interesa?
             <select id="contact-plan" name="plan">
               <option value="">Todavía no lo sé</option>
               <option value="MINI - 35€">MINI - 35€</option>
               <option value="BUSINESS - 55€">BUSINESS - 55€</option>
               <option value="PREMIUM - 85€">PREMIUM - 85€</option>
-              <option value="Propuesta personalizada">
-                Quiero una propuesta personalizada
-              </option>
+              <option value="Propuesta personalizada">Propuesta personalizada</option>
             </select>
           </label>
 
-          <label for="contact-message">
-            Cuéntanos tu proyecto
-            <textarea
-              id="contact-message"
-              name="message"
-              rows="5"
-              placeholder="Necesito una web para..."
-              maxlength="3000"
-              required></textarea>
+          <label for="contact-message">Cuéntanos tu proyecto
+            <textarea id="contact-message" name="message" rows="5" maxlength="3000" placeholder="Necesito una web para..." required></textarea>
           </label>
 
-          <button
-            class="button button-primary submit-button"
-            type="submit">
-            Enviar solicitud <span>↗</span>
-          </button>
-
-          <p class="form-privacy">
-            Utilizaremos los datos que nos facilites únicamente
-            para responder a tu consulta.
-          </p>
-
+          <button class="button button-primary submit-button" type="submit">Enviar solicitud <span>↗</span></button>
+          <p class="form-privacy">Utilizaremos tus datos únicamente para responder a tu consulta.</p>
         </form>
-
       </div>
-
     </section>
-
   </main>
 
-  <!-- PIE DE PÁGINA -->
   <footer class="site-footer">
-
     <div class="footer-main">
-
       <a class="brand" href="#inicio">
         <span class="brand-mark">W<span>.</span></span>
         <span>webloria<span class="brand-light">.studio</span></span>
       </a>
-
       <p>Tu idea, en la web.</p>
-
-      <a
-        href="https://instagram.com/webloria.studio"
-        target="_blank"
-        rel="noopener noreferrer">
-        @webloria.studio ↗
-      </a>
-
+      <a href="https://instagram.com/webloria.studio" target="_blank" rel="noopener noreferrer">@webloria.studio ↗</a>
     </div>
-
     <div class="footer-bottom">
-
-      <span>
-        © <span id="year"></span> Webloria Studio.
-        Todos los derechos reservados.
-      </span>
-
+      <span>© <span id="year"></span> Webloria Studio. Todos los derechos reservados.</span>
       <a href="#top">Volver arriba ↑</a>
-
     </div>
-
   </footer>
 
 </body>
