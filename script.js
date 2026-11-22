@@ -1,108 +1,101 @@
 
-// WEBLORIA STUDIO
-// Navegación, animaciones y formulario.
+document.addEventListener("DOMContentLoaded", () => {
 
-// MENÚ MÓVIL
-const menuToggle = document.querySelector(".menu-toggle");
-const nav = document.querySelector(".nav");
+  // MENÚ PARA MÓVILES
+  const menuButton = document.querySelector(".menu-toggle");
+  const nav = document.querySelector(".main-nav");
 
-if (menuToggle && nav) {
-  menuToggle.addEventListener("click", () => {
-    const opened = menuToggle.getAttribute("aria-expanded") === "true";
+  if (menuButton && nav) {
+    menuButton.addEventListener("click", () => {
+      const open = nav.classList.toggle("open");
 
-    menuToggle.setAttribute("aria-expanded", String(!opened));
-    nav.classList.toggle("open", !opened);
-    menuToggle.textContent = opened ? "☰" : "✕";
-  });
-
-  nav.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      nav.classList.remove("open");
-      menuToggle.setAttribute("aria-expanded", "false");
-      menuToggle.textContent = "☰";
+      menuButton.setAttribute("aria-expanded", String(open));
+      menuButton.setAttribute(
+        "aria-label",
+        open ? "Cerrar menú" : "Abrir menú"
+      );
     });
-  });
-}
 
-// ANIMACIONES AL DESPLAZARSE
-const elements = document.querySelectorAll(".reveal");
+    nav.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
 
-const reduceMotion = window.matchMedia(
-  "(prefers-reduced-motion: reduce)"
-).matches;
+  // COMPARADOR ANTES Y DESPUÉS
+  const slider = document.getElementById("comparison-slider");
+  const after = document.getElementById("comparison-after");
+  const handle = document.getElementById("comparison-handle");
 
-if ("IntersectionObserver" in window && !reduceMotion) {
-  const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        obs.unobserve(entry.target);
+  function updateComparison() {
+    if (!slider || !after || !handle) return;
+
+    const value = slider.value + "%";
+
+    after.style.width = value;
+    handle.style.left = value;
+  }
+
+  if (slider) {
+    slider.addEventListener("input", updateComparison);
+    updateComparison();
+  }
+
+  // ANIMACIONES AL BAJAR POR LA PÁGINA
+  const revealItems = document.querySelectorAll(".reveal");
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -35px 0px"
       }
+    );
+
+    revealItems.forEach(item => observer.observe(item));
+
+  } else {
+    revealItems.forEach(item => {
+      item.classList.add("visible");
     });
-  }, {
-    threshold: 0.12
+  }
+
+  // BARRA DE PROGRESO SUPERIOR
+  const progress = document.getElementById("scroll-progress");
+
+  const updateProgress = () => {
+    if (!progress) return;
+
+    const scrollable =
+      document.documentElement.scrollHeight - window.innerHeight;
+
+    progress.style.width =
+      (scrollable > 0
+        ? window.scrollY / scrollable * 100
+        : 0) + "%";
+  };
+
+  window.addEventListener("scroll", updateProgress, {
+    passive: true
   });
 
-  elements.forEach(element => observer.observe(element));
-} else {
-  elements.forEach(element => {
-    element.classList.add("visible");
-  });
-}
+  updateProgress();
 
-// AÑO AUTOMÁTICO
-const year = document.getElementById("year");
+  // AÑO AUTOMÁTICO DEL FOOTER
+  const year = document.getElementById("year");
 
-if (year) {
-  year.textContent = new Date().getFullYear();
-}
+  if (year) {
+    year.textContent = new Date().getFullYear();
+  }
 
-// FORMULARIO DE CONTACTO
-const contactForm = document.getElementById("contact-form");
-const formMessage = document.getElementById("form-message");
-
-if (contactForm) {
-  contactForm.addEventListener("submit", event => {
-    event.preventDefault();
-
-    if (!contactForm.reportValidity()) {
-      return;
-    }
-
-    const data = new FormData(contactForm);
-
-    const name = data.get("name");
-    const email = data.get("email");
-    const business = data.get("business") || "No indicado";
-    const project = data.get("project");
-    const message = data.get("message");
-
-    const subject = encodeURIComponent(
-      `Nuevo proyecto Webloria - ${name}`
-    );
-
-    const body = encodeURIComponent(
-      `Hola Webloria Studio,
-
-Nombre: ${name}
-Correo: ${email}
-Negocio: ${business}
-Tipo de proyecto: ${project}
-
-Descripción:
-${message}
-
-Enviado desde la página web de Webloria Studio.`
-    );
-
-    if (formMessage) {
-      formMessage.textContent =
-        "Abriendo tu aplicación de correo para preparar el mensaje...";
-    }
-
-    // IMPORTANTE:
-    // Sustituye esta dirección por tu correo real.
-    window.location.href =
-      `mailto:hola@webloria.com?subject=${subject}&body=${body}`;
-  });
-}
+});
